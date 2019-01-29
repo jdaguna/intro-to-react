@@ -19,7 +19,7 @@
             seconds: 0};
         }
 
-        tick() {//next steps: reset state.seconds to 0 once it is > 60
+        tick() {
           this.setState(state => ({
             seconds: state.seconds + 1
           }));
