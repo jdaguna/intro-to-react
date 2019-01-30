@@ -15,31 +15,8 @@
         constructor(props){
           super(props);
           this.state = {
-            minutes: 0,
-            seconds: 0};
+            number: 1
         }
-
-        tick() {
-          this.setState(state => ({
-            seconds: state.seconds + 1
-          }));
-
-
-        }
-
-        tickMinute(){
-          this.setState(state => ({
-            minutes: state.minutes + 1
-          }));
-        }
-
-        componentDidMount() {
-          this.interval = setInterval(() => this.tick(), 1000);
-          this.interval = setInterval(() => this.tickMinute(), 60000);
-        }
-
-        componemtWillUnmount() {
-          clearInterval(this.interval);
         }
 
         render() {
@@ -49,11 +26,6 @@
               <h2>Current program: {this.props.label}</h2>
               <h3>Current week: {this.state.number}</h3>
               <p>Current Date: {this.props.date.toLocaleDateString()}</p>
-
-              <p>Webpage Runtime in Minutes: {this.state.minutes}</p>
-              <p>Webpage Runtime in Seconds: {this.state.seconds}</p>
-
-
 
             </div>
           );
